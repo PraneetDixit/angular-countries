@@ -1,0 +1,41 @@
+#head{
+    padding: 0px 80px;
+    height: 80px;
+    background-color: var(--header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 4px 1px rgb(0 0 0 / 20%);
+    color: var(--textMain);
+}
+
+h1{
+    font-size: 22px;
+    font-weight: var(--bolder);
+}
+
+#switcher{
+    font-size: 18px;
+    color: var(--textMain);
+    font-weight: var(--bold);
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#switcher img, #switcher span{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#switcher img{
+    margin-right: 5px;
+}
+
+#switcher:active{
+    background-color: var(--bgSec);
+}

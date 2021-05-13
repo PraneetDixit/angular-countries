@@ -1,0 +1,29 @@
+:root{
+    --white: hsl(0, 0%, 100%);
+    --offWhite: hsl(180, 100%, 99%);
+    --offWhite2: hsl(0, 0%, 94%);
+    --gray1: hsl(0, 0%, 98%);
+    --gray2: hsl(0, 0%, 52%);
+    --blue1: hsl(209, 23%, 22%);
+    --blue2: hsl(207, 26%, 17%);
+    --header: var(--white);
+    --textMain: #000;
+    --bgSec: var(--offWhite2);
+    --light: 300;
+    --bold: 600;
+    --bolder: 800;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.dark{
+    --header: var(--blue1);
+    --textMain: var(--offWhite);
+    --bgSec: var(--blue2);
+}
