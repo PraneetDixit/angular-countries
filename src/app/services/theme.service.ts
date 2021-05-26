@@ -17,12 +17,11 @@ export class ThemeService {
   }
 
   toggleTheme(){
-    this.changeTheme(this._isDark ? false : true);
+    this.changeTheme(!(this._isDark));
   }
 
   getDefaultTheme(){
     this.changeTheme((window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem("ngAppDarkTheme")) ? true : false);
-    console.log("Def func init", this._isDark);
   }
 
   changeTheme(val:boolean){

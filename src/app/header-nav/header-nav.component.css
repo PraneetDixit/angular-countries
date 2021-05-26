@@ -7,6 +7,10 @@
     align-items: center;
     box-shadow: 0 0 4px 1px rgb(0 0 0 / 20%);
     color: var(--textMain);
+    overflow-y: overlay;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
 }
 
 h1{

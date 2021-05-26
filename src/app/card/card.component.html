@@ -1,0 +1,11 @@
+<div class="cardWrapper">
+    <img class="flag" [src]="imgSrc" [title]="titleText">
+    <div class="description">
+        <div class="nameCont">
+            <h3>{{country.name}}</h3>
+        </div>
+        <h4>Population : <span>{{country.population | number : '1.0-0' : 'en-US'}}</span></h4>
+        <h4>Region: <span>{{country.region}}</span></h4>
+        <h4>Capital: <span>{{country.capital}}</span></h4>
+    </div>
+</div>

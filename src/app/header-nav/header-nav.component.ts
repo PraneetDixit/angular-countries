@@ -8,16 +8,13 @@ import { ThemeService } from '../services/theme.service';
 })
 export class HeaderNavComponent{
   dark: boolean;
-  _subscription;
 
   constructor(private themeService : ThemeService) {
     this.dark = themeService.getTheme();
-    this._subscription = themeService.themeChange.subscribe((value) => { 
-      this.dark = value; 
-    });
   }
 
   togTheme(){
     this.themeService.toggleTheme();
+    this.dark = this.themeService.getTheme();
   }
 }
