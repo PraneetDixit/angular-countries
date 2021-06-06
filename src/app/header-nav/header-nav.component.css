@@ -1,4 +1,4 @@
-#head{
+:host{
     padding: 0px 80px;
     height: 80px;
     background-color: var(--header);
@@ -10,7 +10,7 @@
     overflow-y: overlay;
     position: sticky;
     top: 0px;
-    z-index: 2;
+    z-index: 6;
 }
 
 h1{

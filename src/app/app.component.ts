@@ -11,13 +11,13 @@ export class AppComponent {
     return this.isDark ? "dark" : "";
   }
 
-  isDark = false;
-  _subscription;
+  isDark!: boolean;
 
   constructor(private themeService: ThemeService){
-    this._subscription = themeService.themeChange.subscribe((value) => { 
-      this.isDark = value; 
-    });
-    themeService.getDefaultTheme();
+    this.isDark = themeService.getDefaultTheme();
+  }
+
+  toggleTheme(){
+    this.isDark = this.themeService.toggleTheme();
   }
 }

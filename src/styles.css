@@ -27,6 +27,10 @@
     transition: background-color 0.2s, color 0.2s;
 }
 
+body{
+    scroll-behavior: smooth;
+}
+
 .dark{
     --header: var(--blue1);
     --textMain: var(--offWhite2);

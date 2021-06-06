@@ -1,6 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FilterService } from '../services/filter.service';
+import { Component, OnInit } from '@angular/core';
 import { RequestService } from '../services/request.service';
+import { FilterService } from '../services/filter.service';
 
 @Component({
   selector: 'app-country-home',
@@ -8,45 +8,34 @@ import { RequestService } from '../services/request.service';
   styleUrls: ['./country-home.component.css']
 })
 export class CountryHomeComponent implements OnInit {
-  @ViewChild("options") options!: ElementRef;
-
-  regions: string[] = [
-    "Africa",
-    "Americas",
-    "Asia",
-    "Europe",
-    "Oceania"
-  ];
-
-  countryName: string = "";
-
-  selectedRegion: string | null = null;
 
   initCountries: any = null;
-  filteredCountries: any = this.initCountries;
+  filteredCountries!: any;
+  pages!: number;
+  pageNumber: number = 0;
 
-  constructor(private requestService: RequestService, private filterService: FilterService) { }
+  constructor(private requestService: RequestService, private filterService: FilterService) {}
 
   ngOnInit(): void {
     this.requestService.all()
       .subscribe((data) => {
         this.initCountries = data;
         this.filteredCountries = this.initCountries;
+        this.pages = this.getNumberOfPages();
       });
   }
   
-  checkRegion(region: string){
-    this.selectedRegion = region;
-    this.options.nativeElement.open = false;
-    this.filter();
+  filter(data: any[]){
+    this.filteredCountries = this.filterService.filter(this.initCountries, data[0], data[1]);
+    this.pages = this.getNumberOfPages();
+    this.pageNumber = 0;
   }
 
-  filter(){
-    this.filteredCountries = this.filterService.filter(this.initCountries, this.selectedRegion, this.countryName);
+  getNumberOfPages(): number{
+    return Math.ceil(this.filteredCountries.length / 12);
   }
 
-  removeRegion(){
-    this.selectedRegion = null;
-    this.filter();
+  scrollToTop(){
+    window.scrollTo(0, 0);
   }
 }

@@ -1,5 +1,4 @@
-import { Component} from '@angular/core';
-import { ThemeService } from '../services/theme.service';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'header-nav',
@@ -7,14 +6,10 @@ import { ThemeService } from '../services/theme.service';
   styleUrls: ['./header-nav.component.css']
 })
 export class HeaderNavComponent{
-  dark: boolean;
-
-  constructor(private themeService : ThemeService) {
-    this.dark = themeService.getTheme();
-  }
+  @Input() dark!: boolean;
+  @Output() themeToggled: EventEmitter<any> = new EventEmitter<any>();
 
   togTheme(){
-    this.themeService.toggleTheme();
-    this.dark = this.themeService.getTheme();
+    this.themeToggled.emit();
   }
 }

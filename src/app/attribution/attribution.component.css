@@ -1,10 +1,11 @@
-footer{
+:host{
     padding: 20px;
     text-align: center;
     font-weight: var(--light);
     font-size: 16px;
     background-color: var(--header);
     color: var(--textMain);
+    display: block;
 }
 
 a{

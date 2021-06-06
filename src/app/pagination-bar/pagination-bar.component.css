@@ -1,0 +1,56 @@
+:host{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+button{
+    outline: none;
+    border: none;
+    padding: 0px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button[disabled]{
+    cursor: default;
+}
+
+button svg{
+    height: 22px;
+    width: auto;
+    color: var(--textSec);
+    vertical-align: middle;
+}
+
+button[disabled] svg{
+    color: #858585;
+}
+
+#numberControl{
+    font-size: 20px;
+    color: var(--textMain);
+}
+
+#numberControl span{
+    margin: 0px 4px 0px 6px;
+}
+
+#numberChanger{
+    border: 0px;
+    outline: none;
+    display: inline-block;
+    width: calc(2ch + 10px);
+    text-align: center;
+    padding: 3px 0px;
+    background-color: var(--header);
+    border-radius: 5px;
+    font-size: 20px;
+    color: var(--textMain);
+}
+
+#numberChanger::-webkit-outer-spin-button,
+#numberChanger::-webkit-inner-spin-button {
+    display: none;
+}

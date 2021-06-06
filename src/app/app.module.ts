@@ -9,6 +9,9 @@ import { AttributionComponent } from './attribution/attribution.component';
 import { CountryHomeComponent } from './country-home/country-home.component';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
+import { PaginationBarComponent } from './pagination-bar/pagination-bar.component';
+import { BreakPipe } from './pipes/break.pipe';
+import { FilterBarComponent } from './filter-bar/filter-bar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { CardComponent } from './card/card.component';
     HeaderNavComponent,
     AttributionComponent,
     CountryHomeComponent,
-    CardComponent
+    CardComponent,
+    PaginationBarComponent,
+    BreakPipe,
+    FilterBarComponent
   ],
   imports: [
     BrowserModule,

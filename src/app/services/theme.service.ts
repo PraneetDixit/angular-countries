@@ -1,32 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
-  private _isDark: boolean;
-  themeChange: Subject<boolean> = new Subject<boolean>();
+  private _isDark: boolean = false;
 
-  constructor(){
-    this._isDark = false;
-  }
-
-  getTheme(){
+  toggleTheme(): boolean{
+    this.changeTheme(!(this._isDark));
     return this._isDark;
   }
 
-  toggleTheme(){
-    this.changeTheme(!(this._isDark));
-  }
-
-  getDefaultTheme(){
+  getDefaultTheme() : boolean{
     this.changeTheme((window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.getItem("ngAppDarkTheme")) ? true : false);
+    return this._isDark;
   }
 
   changeTheme(val:boolean){
     this._isDark = val;
-    this.themeChange.next(val);
     localStorage.setItem("ngAppDarkTheme", val? "true" : "");
   }
 }
