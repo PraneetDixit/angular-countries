@@ -1,3 +1,11 @@
-<header-nav (themeToggled)="toggleTheme()" [dark]="isDark"></header-nav>
+<header>
+    <h1>Where in the world?</h1>
+    <button id="switcher" (click)="toggleTheme()">
+        <img [src]="isDark ? '../assets/dark-moon.svg' : '../assets/moon.svg'" alt="light mode" height="18" width="18">
+        <span>{{isDark ? "Light" : "Dark"}} Mode</span>
+    </button>
+</header>
 <router-outlet></router-outlet>
-<attribution></attribution>
+<footer>
+    Angular countries app - Challenge by <a href="https://frontendmentor.io" target="_blank">FrontendMentor</a>, Developed by <a href="https://praneetdixit.me" target="_blank">Praneet Dixit</a>
+</footer>

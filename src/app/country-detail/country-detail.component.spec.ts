@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AttributionComponent } from './attribution.component';
+import { CountryDetailComponent } from './country-detail.component';
 
-describe('AttributionComponent', () => {
-  let component: AttributionComponent;
-  let fixture: ComponentFixture<AttributionComponent>;
+describe('CountryDetailComponent', () => {
+  let component: CountryDetailComponent;
+  let fixture: ComponentFixture<CountryDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AttributionComponent ]
+      declarations: [ CountryDetailComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AttributionComponent);
+    fixture = TestBed.createComponent(CountryDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
