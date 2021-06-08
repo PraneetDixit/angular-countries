@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs'
+
 import { RequestService } from '../services/request.service';
 import { FilterService } from '../services/filter.service';
 
@@ -13,11 +16,19 @@ export class CountryHomeComponent implements OnInit {
   filteredCountries!: any;
   pages!: number;
   pageNumber: number = 0;
+  // loaded : boolean = false;
+  errorMsg: string = "";
 
   constructor(private requestService: RequestService, private filterService: FilterService) {}
 
   ngOnInit(): void {
     this.requestService.all()
+      .pipe(
+        catchError(error => {
+          this.errorMsg = `${error.status} (${error.statusText})`;
+          return of(null);
+        })
+      )
       .subscribe((data) => {
         this.initCountries = data;
         this.filteredCountries = this.initCountries;

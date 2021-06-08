@@ -1,8 +1,23 @@
-<filter-bar (filterChanged)="filter($event)"></filter-bar>
-<div id="list">
-    <app-card [country]="country" *ngFor="let country of filteredCountries | break: pageNumber"></app-card>
-    <div *ngIf="filteredCountries.length === 0">
-        Your query did not match any country. Please edit your query and try again.
+<div *ngIf="initCountries">
+    <filter-bar (filterChanged)="filter($event)"></filter-bar>
+    <div *ngIf="filteredCountries.length; else filterNotFound">
+        <div id="list">
+            <app-card [country]="country" *ngFor="let country of filteredCountries | break: pageNumber"></app-card>
+        </div>
+        <pagination-bar [total]="pages" [current]="pageNumber" (pageChanged)="pageNumber = $event; scrollToTop()"></pagination-bar>
+    </div>
+    <ng-template #filterNotFound>
+        <div id="queryError">
+            Your query did not match any country. <br> Please edit your query and try again.
+        </div>
+    </ng-template>
+</div>
+<div id="loader" *ngIf="initCountries === null">
+    <img src="../../assets/loader.png" alt="loading" height="150" width="150">
+    <h2>loading...</h2>
+    <div id="error" *ngIf="errorMsg">
+        <h2>Error:</h2>
+        <p>Failed to fetch <br> {{errorMsg}}</p>
+        <p>Please refresh the page and try again</p>
     </div>
 </div>
-<pagination-bar *ngIf="filteredCountries.length" [total]="pages" [current]="pageNumber" (pageChanged)="pageNumber = $event; scrollToTop()"></pagination-bar>
