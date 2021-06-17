@@ -1,1 +1,36 @@
-<pre>{{name | json}}</pre>
+<button routerLink="/" id="back">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/>
+    </svg>
+    Back
+</button>
+
+<div id="infoContainer" *ngIf="countryData">
+    <div id="imgCont">
+        <img [src]="countryData.flag" alt="Flag of {{countryData.name}}" title="Flag of {{countryData.name}}">
+    </div>
+    <div id="textCont">
+        <h2>{{countryData.name}}</h2>
+        <div id="details">
+            <div>
+                <p>Native Name: <span [title]="countryData.nativeName">{{countryData.nativeName}}</span></p>
+                <p>Population: <span>{{countryData.population}}</span></p>
+                <p>Region: <span>{{countryData.region}}</span></p>
+                <p>Sub Region: <span>{{countryData.subregion}}</span></p>
+                <p>Capital: <span>{{countryData.capital}}</span></p>
+            </div>
+            <div>
+                <p>Top Level Domain: <span>{{countryData.topLevelDomain}}</span></p>
+                <p>Currencies: <span [title]="countryData.currencies">{{countryData.currencies}}</span></p>
+                <p>Languages: <span>{{countryData.languages}}</span></p>
+            </div>
+        </div>
+        <div id="borders">
+            <p>Border Countries:</p>
+            <div>
+                <a class="borderName" *ngFor="let borderCountry of countryData.borders" [title]="borderCountry" [routerLink]="['/country', borderCountry]">{{borderCountry}}</a>
+                <p *ngIf="countryData.borders.length === 0">No Border Countries</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,17 +2,14 @@
     --white: hsl(0, 0%, 100%);
     --white2: hsl(196 41% 95%);
     --offWhite: hsl(0, 0%, 98%);
-    --offWhite2: hsl(0, 0%, 94%);
-    --gray1: hsl(0, 0%, 98%);
-    --gray2: hsl(0, 0%, 52%);
-    --gray3: hsl(0 0% 25%);
+    --gray: hsl(0 0% 25%);
     --blue1: hsl(209, 23%, 22%);
     --blue2: hsl(207, 26%, 17%);
     --key: hsl(220deg 4% 14%);
-    --va: var(--gray2);
+    --va: #020303;
     --header: var(--white);
     --textMain: #000;
-    --textSec: var(--gray3);
+    --textSec: var(--gray);
     --bgSec: var(--offWhite);
     --light: 300;
     --bold: 600;
@@ -33,9 +30,9 @@ body{
 
 .dark{
     --header: var(--blue1);
-    --textMain: var(--offWhite2);
+    --textMain: var(--offWhite);
     --textSec: var(--white2);
     --bgSec: var(--blue2);
     --key: hsl(180deg 30% 95%);
-    --va: hsl(210deg 18% 80%);
+    --va: #bfbfbf;
 }

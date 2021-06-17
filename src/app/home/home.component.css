@@ -3,7 +3,8 @@
     width: 100%;
     background-color: var(--bgSec);
     padding: 45px 75px;
-    min-height: calc(100vh - 142px);
+    flex-grow: 1;
+    flex-shrink: 0;
 }
 
 #list{
@@ -22,7 +23,7 @@
 }
 
 #loader{
-    min-height: calc(100vh - 232px);
+    min-height: calc(100% - 90px);
     display: flex;
     flex-direction: column;
     justify-content: center;

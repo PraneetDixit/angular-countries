@@ -1,0 +1,127 @@
+:host{
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 0;
+    background-color: var(--bgSec);
+    padding: 60px 80px;
+}
+
+#back{
+    display: flex;
+    align-items: center;
+    background-color: var(--header);
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    color: var(--textSec);
+    font-size: 16px;
+    padding: 12px 32px 12px 28px;
+    margin-bottom: 60px;
+    font-weight: var(--bold);
+    cursor: pointer;
+    box-shadow: 0 0 10px -3px rgb(0 0 0 / 15%);
+}
+
+#back svg{
+    margin-right: 6px;
+    height: 18px;
+}
+
+#infoContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#infoContainer > div{
+    flex-shrink: 0;
+    min-width: 45%;
+    max-width: 45%;
+}
+
+#imgCont img{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 0 3px rgba(0 0 0/50%));
+    border-radius: 8px;
+}
+
+#textCont h2{
+    color: var(--textMain);
+    font-weight: var(--bolder);
+    font-size: 25px;
+    margin: 25px 0px;
+}
+
+#details{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#details p{
+    display: flex;
+    font-size: 15px;
+    font-weight: var(--bold);
+    color: var(--textMain);
+    margin: 15px 0px;
+}
+
+#details p span{
+    color: var(--va);
+    font-weight: var(--light);
+    max-width: 15ch;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    margin-left: 1ch;
+}
+
+#details p:last-child span{
+    display: inline;
+}
+
+#borders{
+    margin-top: 32px;
+    display: flex;
+}
+
+#borders > p{
+    font-size: 15px;
+    font-weight: var(--bold);
+    color: var(--textMain);   
+    margin-right: 8px;
+}
+
+#borders > div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#borders > div a{
+    background-color: var(--header);
+    color: var(--va);
+    font-size: 15px;
+    padding: 4px 17px;
+    border-radius: 4px;
+    text-transform: capitalize;
+    margin: 0px 10px 10px 0px;
+    max-width: 25ch;
+    filter: drop-shadow(0 0 2px rgba(0 0 0/45%));
+    cursor: pointer;
+    text-decoration: none;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+#borders > div a:hover{
+    color: var(--textSec);
+}
+
+#borders > div p{
+    color: var(--va);
+}

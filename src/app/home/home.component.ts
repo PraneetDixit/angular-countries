@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs'
 
-import { RequestService } from '../services/request.service';
+import { HomeRequestService } from './services/home-request.service';
 import { FilterService } from './services/filter.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   pageNumber: number = 0;
   errorMsg: string = "";
 
-  constructor(private requestService: RequestService, private filterService: FilterService) {}
+  constructor(private requestService: HomeRequestService, private filterService: FilterService) {}
 
   ngOnInit(): void {
     this.requestService.all()

@@ -2,7 +2,7 @@
     <filter-bar (filterChanged)="filter($event)"></filter-bar>
     <div *ngIf="filteredCountries.length; else filterNotFound">
         <div id="list">
-            <app-card [country]="country" *ngFor="let country of filteredCountries | break: pageNumber"></app-card>
+            <app-card [country]="country" *ngFor="let country of filteredCountries | break: pageNumber" [routerLink]="['/country', country.name]"></app-card>
         </div>
         <pagination-bar [total]="pages" [current]="pageNumber" (pageChanged)="pageNumber = $event; scrollToTop()"></pagination-bar>
     </div>

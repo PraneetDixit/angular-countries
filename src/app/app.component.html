@@ -1,5 +1,5 @@
 <header>
-    <h1>Where in the world?</h1>
+    <h1 routerLink="/country">Where in the world?</h1>
     <button id="switcher" (click)="toggleTheme()">
         <img [src]="isDark ? '../assets/dark-moon.svg' : '../assets/moon.svg'" alt="light mode" height="18" width="18">
         <span>{{isDark ? "Light" : "Dark"}} Mode</span>

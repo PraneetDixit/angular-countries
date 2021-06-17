@@ -10,6 +10,7 @@ import { PaginationBarComponent } from './components/pagination-bar/pagination-b
 import { BreakPipe } from './pipes/break.pipe';
 import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
 import { FilterService } from './services/filter.service';
+import { HomeRequestService } from './services/home-request.service'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FilterService } from './services/filter.service';
     FormsModule
   ],
   providers: [
-    FilterService
+    FilterService,
+    HomeRequestService
   ]
 })
 export class HomeModule { }
