@@ -17,7 +17,7 @@ export class FilterService {
   }
 
   private filterByName(arr: any, name: string){
-    let diffName = name.toLowerCase();
+    let diffName = name.trim().toLowerCase();
     return arr.filter(function(item: any){
       let arrName = item.name.toLowerCase();
       if(arrName.includes(diffName)){
