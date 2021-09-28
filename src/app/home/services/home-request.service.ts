@@ -7,6 +7,6 @@ export class HomeRequestService {
   constructor(private http: HttpClient) { }
 
   all(){
-    return this.http.get("https://restcountries.eu/rest/v2/all?fields=name;capital;population;region;flag;");
+    return this.http.get("https://restcountries.com/v2/all?fields=name;capital;population;region;flag;");
   }
 }
