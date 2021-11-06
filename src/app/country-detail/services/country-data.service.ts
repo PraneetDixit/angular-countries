@@ -9,11 +9,11 @@ export class CountryDataService {
   constructor(private http: HttpClient) { }
 
   fetchCountryData(name: string){
-    return this.http.get(`https://restcountries.eu/rest/v2/name/${name}?fullText=true&fields=name;nativeName;topLevelDomain;population;region;languages;subregion;capital;currencies;borders;flag;`);
+    return this.http.get(`https://restcountries.com/v2/name/${name}?fullText=true&fields=name,nativeName,topLevelDomain,population,region,languages,subregion,capital,currencies,borders,flag`);
   }
 
   fetchAllCountries(){
-    return this.http.get(`https://restcountries.eu/rest/v2/all?fields=name;alpha3Code;`)
+    return this.http.get(`https://restcountries.com/v2/all?fields=name,alpha3Code`)
   }
 
   formatData(arr: any){
